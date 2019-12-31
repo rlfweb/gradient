@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DeveloperListing from './DeveloperListing';
 
 import Header from './Header';
 import Nav from './Nav'; 
@@ -10,8 +11,9 @@ class App extends React.Component {
     return  (
       <div>
 {/* // You add every file name within here */}
+        <Nav />
         <Header />
-
+        <DeveloperListing />
     </div>
     );
   }
