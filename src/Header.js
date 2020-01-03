@@ -12,26 +12,26 @@ class Header extends React.Component {
 
       <div class="container">
 
-<body className="wallpaper">
+        <body className="wallpaper">
 
-        <div className="row headColour">
+          <div className="row headColour">
 
-          <div className="todoTitle col-12 col-md-8">
-            Susan's To Do Lists
+            <div className="todoTitle col-12 col-md-8">
+              Susan's To Do Lists
             </div>
 
-          <div className="searchBar col-12 col-md-4 text-lg-right">
-          Search 
+            <div className="searchBar col-12 col-md-4 text-lg-right">
+              Search
             </div>
           </div>
-          </body>
+        </body>
 
-        </div>
+      </div>
 
-        
-        );
-      }
-    }
-    
-    // REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
-    export default Header;
+
+    );
+  }
+}
+
+// REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
+export default Header;

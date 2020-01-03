@@ -5,20 +5,20 @@ import './App.css';
 
 
 import Header from './Header';
-import Nav from './Nav'; 
-import Tasks from './Tasks'; 
-import Footer from './Footer'; 
+import Nav from './Nav';
+import Tasks from './Tasks';
+import Footer from './Footer';
 
 class App extends React.Component {
   render() {
-    return  (
+    return (
       <div>
-{/* // You add every file name within here */}
+        {/* // You add every file name within here */}
         <Nav />
         <Header />
         <Tasks />
         <Footer />
-    </div>
+      </div>
     );
   }
 }

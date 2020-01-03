@@ -11,20 +11,21 @@ class Nav extends React.Component {
 
       <div className="container">
 
-        <div className="row headColour">
+      <div className="row headColour">
 
           <div className="logo col-12 col-md-4">
             GRADIENT
-    </div>
+          </div>
 
           <div className="date col-12 col-md-4 text-lg-center">
             Friday 3 January 2020
-    </div>
+          </div>
 
           <div className="signInAndGreeting col-12 col-md-4 text-lg-right">
             Log in / Sign up / Hello [Susan]
-    </div>
-        </div>
+          </div>
+      
+      </div>
 
 
       </div>

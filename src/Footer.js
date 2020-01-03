@@ -11,16 +11,16 @@ class Footer extends React.Component {
 
       <div className="container wallpaper">
 
-<footer className="footerText">
-            &copy;Gradient <br />
-            Disclaimer: Lorem ipsum
+        <footer className="footerText">
+          &copy;Gradient <br />
+          Disclaimer: Lorem ipsum
         </footer>
 
 
-        </div>
-        );
-      }
-    }
-    
-    // REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
-    export default Footer;
+      </div>
+    );
+  }
+}
+
+// REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
+export default Footer;
