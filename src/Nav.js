@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Nav.css';
+
 class Nav extends React.Component {
 
   render() {
@@ -7,19 +9,19 @@ class Nav extends React.Component {
 
 
 
-      <div class="container">
+      <div className="container">
 
-        <div class="row headColour">
+        <div className="row headColour">
 
-          <div class="col-12 col-md-4 logo">
+          <div className="logo col-12 col-md-4">
             GRADIENT
     </div>
 
-          <div class="date col-12 col-md-4 text-lg-center">
-            Saturday 14 December 2019
+          <div className="date col-12 col-md-4 text-lg-center">
+            Friday 3 January 2020
     </div>
 
-          <div class="signInAndGreeting col-12 col-md-4 text-lg-right">
+          <div className="signInAndGreeting col-12 col-md-4 text-lg-right">
             Log in / Sign up / Hello [Susan]
     </div>
         </div>

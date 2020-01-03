@@ -1,5 +1,8 @@
 import React from 'react';
 
+import './Header.css';
+
+
 class Header extends React.Component {
 
   render() {
@@ -9,19 +12,23 @@ class Header extends React.Component {
 
       <div class="container">
 
-        <div class="row headColour">
+<body className="wallpaper">
 
-          <div class="todoTitle col-12 col-md-8">
+        <div className="row headColour">
+
+          <div className="todoTitle col-12 col-md-8">
             Susan's To Do Lists
             </div>
 
-          <div class="col-12 col-md-4 text-lg-right">
+          <div className="searchBar col-12 col-md-4 text-lg-right">
           Search 
             </div>
           </div>
-
+          </body>
 
         </div>
+
+        
         );
       }
     }

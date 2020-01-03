@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Footer.css';
+
 class Footer extends React.Component {
 
   render() {
@@ -7,11 +9,11 @@ class Footer extends React.Component {
 
 
 
-      <div class="container">
+      <div className="container wallpaper">
 
-<footer class="footerText">
+<footer className="footerText">
             &copy;Gradient <br />
-            Disclaimer: if we lose all your lists, tough luck
+            Disclaimer: Lorem ipsum
         </footer>
 
 
