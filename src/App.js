@@ -5,6 +5,8 @@ import DeveloperListing from './DeveloperListing';
 
 import Header from './Header';
 import Nav from './Nav'; 
+import Tasks from './Tasks'; 
+import Footer from './Footer'; 
 
 class App extends React.Component {
   render() {
@@ -13,7 +15,8 @@ class App extends React.Component {
 {/* // You add every file name within here */}
         <Nav />
         <Header />
-        <DeveloperListing />
+        <Tasks />
+        <Footer />
     </div>
     );
   }
