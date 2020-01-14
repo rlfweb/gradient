@@ -1,0 +1,20 @@
+.wallpaper {
+  background-color: lightgray;
+  }
+
+.taskBoxes {
+  padding: 10px 10px 10px 10px;
+  }
+
+.priorityHeading {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #464159;
+  font-size: medium;
+}
+
+.taskText {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #464159;
+  font-size: medium;
+  background-color: #8BBABB;
+}

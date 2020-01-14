@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 
 import Header from './Header';
+import AddTask from './AddTask';
 import Nav from './Nav';
+import TaskCount from './TaskCount';
+import TaskList from './TaskList';
 import Tasks from './Tasks';
 import Footer from './Footer';
 
@@ -15,6 +18,8 @@ class App extends React.Component {
         {/* // You add every file name within here */}
         <Nav />
         <Header />
+        <AddTask />
+        <TaskCount />
         <Tasks />
         <Footer />
       </div>

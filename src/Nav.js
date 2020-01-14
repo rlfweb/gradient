@@ -18,7 +18,7 @@ class Nav extends React.Component {
           </div>
 
           <div className="date col-12 col-md-4 text-lg-center">
-            Friday 3 January 2020
+            Tuesday 14 January 2020
           </div>
 
           <div className="signInAndGreeting col-12 col-md-4 text-lg-right">
