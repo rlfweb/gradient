@@ -11,6 +11,14 @@ import Tasks from './Tasks';
 import Footer from './Footer';
 
 class App extends React.Component {
+// good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
+  state = {
+    tasks: [
+      {id: 1, description: "Reply to Nikki", completed: false},
+      {id: 2, description: "Get bike serviced", completed: false},
+      {id: 3, description: "Take back Sloth", completed: false}
+    ]
+  }
   
   render() {
     return (
