@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Tasks.css';
 
 class Tasks extends React.Component {
 
@@ -16,7 +17,7 @@ class Tasks extends React.Component {
               <div className="row">
 
                 <div className="col-12 col-md-8 taskText">
-                  Buy Milk
+                  {this.props.item.description}
                 </div>
 
                 <div class="btn-group col-6 col-md-2">

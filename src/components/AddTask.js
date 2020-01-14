@@ -1,9 +1,8 @@
 import React from 'react';
+import '../AddTask.css';
 
-import './Header.css';
 
-
-class Header extends React.Component {
+class AddTask extends React.Component {
 
   render() {
     return (
@@ -16,14 +15,11 @@ class Header extends React.Component {
 
           <div className="row headerColour">
 
-            <div className="col-12 col-md-8 todoTitle">
-              Susan's To Do Lists
+            <div className="col-12 newTaskTitle">
+              Click to add task  
+              <span className="badge badge-dark">+</span>
             </div>
-
-            <div className="searchBar col-12 col-md-4 text-lg-right">
-              Search
-            </div>
-
+            
           </div>
         </body>
 
@@ -35,4 +31,4 @@ class Header extends React.Component {
 }
 
 // REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
-export default Header;
+export default AddTask;

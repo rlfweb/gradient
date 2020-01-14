@@ -1,6 +1,5 @@
 import React from 'react';
-
-import './TaskCount.css';
+import '../TaskCount.css';
 
 class TaskCount extends React.Component {
 

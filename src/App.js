@@ -1,22 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Header from './Header';
-import AddTask from './AddTask';
-import Nav from './Nav';
-import TaskCount from './TaskCount';
-import TaskList from './TaskList';
-import Tasks from './Tasks';
-import Footer from './Footer';
+import Header from './components/Header';
+import AddTask from './components/AddTask';
+import Nav from './components/Nav';
+import TaskCount from './components/TaskCount';
+import TaskList from './components/TaskList';
+import Footer from './components/Footer';
 
 class App extends React.Component {
 // good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
   state = {
     tasks: [
-      {id: 1, description: "Reply to Nikki", completed: false},
+      {id: 1, description: "Reply to Viv", completed: false},
       {id: 2, description: "Get bike serviced", completed: false},
-      {id: 3, description: "Take back Sloth", completed: false}
+      {id: 3, description: "Take back Sloth", completed: false},
+      {id: 4, description: "Food for lunch", completed: false}
     ]
   }
   
@@ -28,7 +27,7 @@ class App extends React.Component {
         <Header />
         <AddTask />
         <TaskCount taskCount={this.state.tasks.length}/>
-        <Tasks />
+        <TaskList taskCollection={this.state.tasks} />
         <Footer />
       </div>
     );
