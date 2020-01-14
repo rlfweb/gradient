@@ -21,7 +21,7 @@ class TaskCount extends React.Component {
                 </div>
 
                 <div className="col-2 taskCount">
-                  6
+                  {this.props.taskCount}
                 </div>
 
 

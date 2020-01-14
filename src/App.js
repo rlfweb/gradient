@@ -27,7 +27,7 @@ class App extends React.Component {
         <Nav />
         <Header />
         <AddTask />
-        <TaskCount />
+        <TaskCount taskCount={this.state.tasks.length}/>
         <Tasks />
         <Footer />
       </div>
