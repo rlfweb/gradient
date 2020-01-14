@@ -1,16 +1,16 @@
 
-.headColour {
-    background-color: goldenrod;
+.headerColour {
+    background-color: #464159;
 }
 
 .todoTitle {
-    color: darkcyan;
+    color: #FDDB3A;
     font-size: xxx-large;
     }
 
     .searchBar {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        color:darkcyan;
+        color:#C7F0DB;
         font-size: large;
         padding: 5px;
         }

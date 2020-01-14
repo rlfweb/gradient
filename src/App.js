@@ -2,14 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
-
 import Header from './Header';
 import Nav from './Nav';
 import Tasks from './Tasks';
 import Footer from './Footer';
 
 class App extends React.Component {
+  
   render() {
     return (
       <div>
@@ -26,7 +25,7 @@ class App extends React.Component {
 //in React you have to use className not class, as class is a JS reserved word. 
 
 
-// DELETE ALL THIS STUFF AND REPLACE WITH THE ABOVE
+// DELETE ALL THIS AND REPLACE WITH THE ABOVE
 // function App() {
 //   return (
 //     <div className="App">

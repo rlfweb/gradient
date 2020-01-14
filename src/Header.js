@@ -14,9 +14,9 @@ class Header extends React.Component {
 
         <body className="wallpaper">
 
-          <div className="row headColour">
+          <div className="row headerColour">
 
-            <div className="todoTitle col-12 col-md-8">
+            <div className="col-12 col-md-8 todoTitle">
               Susan's To Do Lists
             </div>
 
