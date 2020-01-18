@@ -16,10 +16,10 @@ class AddTask extends React.Component {
           <div className="row headerColour">
 
             <div className="col-12 newTaskTitle">
-              Click to add task  
+              Click to add task
               <span className="badge badge-dark">+</span>
             </div>
-            
+
           </div>
         </body>
 
