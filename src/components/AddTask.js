@@ -4,8 +4,19 @@ import '../AddTask.css';
 
 class AddTask extends React.Component {
 
+state = {
+  taskDescription: "To do ..."
+}
+
+
 addTask = () => {
-  this.props.addTaskFunc("Pick up the shopping")
+  this.props.addTaskFunc(this.state.taskDescription);
+}
+
+taskDescriptionChanged = (event) => {
+  this.setState({
+    taskDescription: event.target.value
+  });
 }
 
   render() {
@@ -20,10 +31,18 @@ addTask = () => {
           <div className="row headerColour">
 
             <div className="col-12 newTaskTitle">
-              Click to add task
-              <button type="button" className="btn btn-secondary btn-xs"  onClick={this.addTask}>
+              <input 
+              type="text"
+              className="form-control"
+              placeholder="Add task here ..."
+              onChange={this.taskDescriptionChanged}
+               />
+               <div className = "input-group-append">
+               <button type="button" className="btn btn-secondary btn-xs"  onClick={this.addTask}>
                     +
                   </button>
+               </div>
+            
             </div>
 
           </div>
