@@ -9,7 +9,7 @@ class Header extends React.Component {
 
 
 
-      <div class="container">
+      <div className="container">
 
         <body className="wallpaper">
 

@@ -18,7 +18,7 @@ deleteClicked = () => {
                   {this.props.item.description}
                 </div>
 
-                <div class="btn-group col-6 col-md-2">
+                <div className="btn-group col-6 col-md-2">
                   <button type="button" className="btn btn-secondary btn-xs">
                     tick
                   </button>
