@@ -4,6 +4,10 @@ import '../AddTask.css';
 
 class AddTask extends React.Component {
 
+addTask = () => {
+  this.props.addTaskFunc("Pick up the shopping")
+}
+
   render() {
     return (
 
@@ -17,7 +21,9 @@ class AddTask extends React.Component {
 
             <div className="col-12 newTaskTitle">
               Click to add task
-              <span className="badge badge-dark">+</span>
+              <button type="button" className="btn btn-secondary btn-xs"  onClick={this.addTask}>
+                    +
+                  </button>
             </div>
 
           </div>

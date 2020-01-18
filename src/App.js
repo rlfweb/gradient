@@ -37,6 +37,21 @@ deleteTask = (taskId) => {
   });
 }
 
+// just after taskDescription is where we might also set priorities or dates for tasks to be done by
+addTask = (taskDescription) => {
+// Define the task that is being added
+const taskToAdd = { id: 7, description: taskDescription, completed: false };
+  // get the current  list of tasks from stat
+  const currentTasks = this.state.tasks;
+  // add the 'taskToAdd' to the array of tasks in state
+currentTasks.push(taskToAdd);
+  // update the state
+  this.setState({
+    tasks: currentTasks
+  });
+
+}
+
 
   render() {
     return (
@@ -44,7 +59,7 @@ deleteTask = (taskId) => {
         {/* // You add every file name within here */}
         <Nav />
         <Header />
-        <AddTask />
+        <AddTask addTaskFunc={this.addTask} />
         <TaskCount taskCount={this.state.tasks.length} />
         <TaskList taskCollection={this.state.tasks} deleteTaskFunc={this.deleteTask} />
         <Footer />

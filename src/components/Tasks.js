@@ -19,10 +19,10 @@ deleteClicked = () => {
                 </div>
 
                 <div class="btn-group col-6 col-md-2">
-                  <button type="button" class="btn btn-secondary btn-xs">
+                  <button type="button" className="btn btn-secondary btn-xs">
                     tick
                   </button>
-                  <button type="button" class="btn btn-secondary btn-xs"  onClick={this.deleteClicked}>
+                  <button type="button" className="btn btn-secondary btn-xs"  onClick={this.deleteClicked}>
                     X
                   </button>
                 </div>
