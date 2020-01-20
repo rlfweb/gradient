@@ -9,7 +9,7 @@ class Nav extends React.Component {
           <div className="logo col-12 col-md-4">GRADIENT</div>
 
           <div className="date col-12 col-md-4 text-lg-center">
-            Tuesday 14 January 2020
+         20 January 2020
           </div>
 
           <div className="signInAndGreeting col-12 col-md-4 text-lg-right">

@@ -14,9 +14,9 @@ deleteClicked = () => {
     return (
       <div className="container wallpaper">
         <div className="row">
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-3 taskBox">
             <div className="col-12">
-              <div className="row">
+              <div className="row taskButtons">
                 <div className="col-12 col-md-8 taskText">
                   {this.props.item.description}
                 </div>

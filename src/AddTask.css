@@ -4,6 +4,13 @@
 
 .newTaskTitle {
   color: #fddb3a;
+  background-color:  #464159;
+  font-size: large;
+}
+
+.input-group-append {
+  color: #fddb3a;
+  background-color:  #464159;
   font-size: large;
 }
 

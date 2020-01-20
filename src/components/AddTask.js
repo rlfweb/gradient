@@ -1,56 +1,46 @@
-import React from 'react';
-import '../AddTask.css';
-
+import React from "react";
+import "../AddTask.css";
 
 class AddTask extends React.Component {
+  state = {
+    taskDescription: "To do ..."
+  };
 
-state = {
-  taskDescription: "To do ..."
-}
+  addTask = () => {
+    this.props.addTaskFunc(this.state.taskDescription);
+  };
 
-
-addTask = () => {
-  this.props.addTaskFunc(this.state.taskDescription);
-}
-
-taskDescriptionChanged = (event) => {
-  this.setState({
-    taskDescription: event.target.value
-  });
-}
+  taskDescriptionChanged = event => {
+    this.setState({
+      taskDescription: event.target.value
+    });
+  };
 
   render() {
     return (
-
-
-
       <div className="container">
-
         <body className="wallpaper">
-
           <div className="row headerColour">
-
-            <div className="col-12 newTaskTitle">
-              <input 
-              type="text"
-              className="form-control"
-              placeholder="Add task here ..."
-              onChange={this.taskDescriptionChanged}
-               />
-               <div className = "input-group-append">
-               <button type="button" className="btn btn-secondary btn-xs"  onClick={this.addTask}>
-                    +
-                  </button>
-               </div>
-            
+            <div className="col-10 newTaskTitle">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add task here ..."
+                onChange={this.taskDescriptionChanged}
+              />
             </div>
-
+            <div className="col-2 input-group-append">
+              <button
+                type="button"
+                className="btn btn-secondary btn-xs"
+                onClick={this.addTask}
+              >
+                +
+              </button>
+            </div>
           </div>
         </body>
-
       </div>
-
-
     );
   }
 }

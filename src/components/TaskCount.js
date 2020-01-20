@@ -11,9 +11,9 @@ class TaskCount extends React.Component {
       <div className="container wallpaper">
 
 
-        <div className="row">
-          <div className="col-12 col-md-6 col-lg-3">
-            <div className="col-12">
+        <div className="row headLine">
+          <div className="col-12 col-md-6 col-lg-3 labelLine">
+            <div className="col-12 red">
               <div className="row">
                 <div className="col-10 listTitle">
                   WORK
