@@ -1,5 +1,8 @@
 import React from "react";
 import "../Tasks.css";
+import Pen from "./pen.png";
+import Delete from "./delete.png";
+
 
 class Tasks extends React.Component {
 
@@ -20,10 +23,10 @@ deleteClicked = () => {
 
                 <div className="btn-group col-6 col-md-2">
                   <button type="button" className="btn btn-secondary btn-xs">
-                    tick
+                  <img src={Pen} alt="edit" />
                   </button>
                   <button type="button" className="btn btn-secondary btn-xs"  onClick={this.deleteClicked}>
-                    X
+                  <img src={Delete} alt="delete" />
                   </button>
                 </div>
               </div>
