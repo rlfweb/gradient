@@ -3,18 +3,14 @@ import "../Tasks.css";
 import Pen from "./pen.png";
 import Delete from "./delete.png";
 
-
 class Tasks extends React.Component {
+  deleteClicked = () => {
+    this.props.deleteTaskFunc(this.props.item.id);
+  };
 
-deleteClicked = () => {
-  this.props.deleteTaskFunc(this.props.item.id);
-}
-
-doneClicked = () => {
-  alert(`You clicked done for task ${this.props.item.id}`);
-}
-
-
+  doneClicked = () => {
+    this.props.completedTaskFunc(this.props.item.id);
+  };
 
   render() {
     return (
@@ -28,11 +24,19 @@ doneClicked = () => {
                 </div>
 
                 <div className="btn-group col-6 col-md-2">
-                  <button type="button" className="btn btn-secondary btn-xs" onClick={this.doneClicked} >
-                  <img src={Pen} alt="edit" />
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-xs"
+                    onClick={this.doneClicked}
+                  >
+                    <img src={Pen} alt="edit" />
                   </button>
-                  <button type="button" className="btn btn-secondary btn-xs"  onClick={this.deleteClicked}>
-                  <img src={Delete} alt="delete" />
+                  <button
+                    type="button"
+                    className="btn btn-secondary btn-xs"
+                    onClick={this.deleteClicked}
+                  >
+                    <img src={Delete} alt="delete" />
                   </button>
                 </div>
               </div>
