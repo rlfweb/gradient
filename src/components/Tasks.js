@@ -13,6 +13,16 @@ class Tasks extends React.Component {
   };
 
   render() {
+
+let description;
+
+if (this.props.item.completed) {
+  description = <div className="col-12 col-md-8 completedTask">{this.props.item.description}</div>
+} else {
+description = <div className="col-12 col-md-8">{this.props.item.description}</div>
+}
+
+
     return (
       <div className="container wallpaper">
         <div className="row">
@@ -24,6 +34,7 @@ class Tasks extends React.Component {
                 </div>
 
                 <div className="btn-group col-6 col-md-2">
+                  {!this.props.item.completed && (
                   <button
                     type="button"
                     className="btn btn-secondary btn-xs"
@@ -31,6 +42,7 @@ class Tasks extends React.Component {
                   >
                     <img src={Pen} alt="edit" />
                   </button>
+                  )}
                   <button
                     type="button"
                     className="btn btn-secondary btn-xs"

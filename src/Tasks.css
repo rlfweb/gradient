@@ -35,3 +35,7 @@
 .taskButtons {
   background-color: #8bbabb;
 }
+
+.completedTask {
+  text-decoration: line-through;
+}

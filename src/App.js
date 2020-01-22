@@ -40,8 +40,26 @@ class App extends React.Component {
   // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
 
   completeTask = taskId => {
-    alert(`You want to delete ${taskId} from state/App`);
-  };
+    // Firstly find the task that needs to be updated
+    const tasksBeingUpdated = this.state.tasks; // this is an array of tasks
+    for( let i = 0; i < tasksBeingUpdated.length; i++ ) {
+      const task = tasksBeingUpdated[i];
+
+      if(task.id === taskId ) {
+// we need to update a property on the identified task
+task.completed = true; 
+break; 
+      }
+    }
+    // just need to loop through the array until we find the one that matches and then boot us out of the array 
+  
+    
+
+    // Upate state to reflect the changes made to the task
+this.setState({
+  tasks: tasksBeingUpdated
+});
+  }
 
   // just after taskDescription is where we might also set priorities or dates for tasks to be done by
   addTask = taskDescription => {
@@ -51,6 +69,10 @@ class App extends React.Component {
       description: taskDescription,
       completed: false
     };
+
+    console.log("Adding task");
+    console.log(taskToAdd);
+
     // get the current  list of tasks from stat
     const currentTasks = this.state.tasks;
     // add the 'taskToAdd' to the array of tasks in state
@@ -79,6 +101,7 @@ class App extends React.Component {
     );
   }
 }
+
 
 //in React you have to use className not class, as class is a JS reserved word.
 
