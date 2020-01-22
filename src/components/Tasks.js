@@ -10,6 +10,12 @@ deleteClicked = () => {
   this.props.deleteTaskFunc(this.props.item.id);
 }
 
+doneClicked = () => {
+  alert(`You clicked done for task ${this.props.item.id}`);
+}
+
+
+
   render() {
     return (
       <div className="container wallpaper">
@@ -22,7 +28,7 @@ deleteClicked = () => {
                 </div>
 
                 <div className="btn-group col-6 col-md-2">
-                  <button type="button" className="btn btn-secondary btn-xs">
+                  <button type="button" className="btn btn-secondary btn-xs" onClick={this.doneClicked} >
                   <img src={Pen} alt="edit" />
                   </button>
                   <button type="button" className="btn btn-secondary btn-xs"  onClick={this.deleteClicked}>
