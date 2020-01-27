@@ -13,15 +13,24 @@ class Tasks extends React.Component {
   };
 
   render() {
+    // description empty by default
+    let description;
 
-let description;
-
-if (this.props.item.completed) {
-  description = <div className="col-12 col-md-8 completedTask">{this.props.item.description}</div>
-} else {
-description = <div className="col-12 col-md-8">{this.props.item.description}</div>
-}
-
+    // this is saying, if the item is completed ...
+    if (this.props.item.completed) {
+      // ... I want it to be a div and it will look like this - with strikethrough
+      description = (
+        <div className="col-12 col-md-8 completedTask">
+          {this.props.item.description}
+        </div>
+      );
+      // if the item isn't completed ...
+    } else {
+      // ... it will look like this
+      description = (
+        <div className="col-12 col-md-8">{this.props.item.description}</div>
+      );
+    }
 
     return (
       <div className="container wallpaper">
@@ -35,13 +44,12 @@ description = <div className="col-12 col-md-8">{this.props.item.description}</di
 
                 <div className="btn-group col-6 col-md-2">
                   {!this.props.item.completed && (
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-xs"
-                    onClick={this.doneClicked}
-                  >
-                    <img src={Pen} alt="edit" />
-                  </button>
+                    <button
+                      type="button"
+                      className="btn btn-secondary btn-xs"
+                      onClick={this.doneClicked}>
+                      <img src={Pen} alt="edit" />
+                    </button>
                   )}
                   <button
                     type="button"
