@@ -39,7 +39,7 @@ class Tasks extends React.Component {
             <div className="col-12">
               <div className="row taskButtons">
                 <div className="col-12 col-md-8 taskText">
-                  {this.props.item.description}
+                {description}
                 </div>
 
                 <div className="btn-group col-6 col-md-2">
