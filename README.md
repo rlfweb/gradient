@@ -1,4 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ToDo Application - Frontend
+
+This is the front end of a basic ToDo Application, titled Gradient, made by Rebecca French. It was built during a training course - Women in Tech course, run by Tech Returners and the BBC. It integrates with a backend, available [here]
+
+The hosted version of the application is available here: https://rlfweb.github.io/gradient/
+
+This project uses the following technology:
+ReactJS
+JavaScript (ES2015+)
+Bootstrap
+CSS
+
+It has been designed and built with reponsive principles in mind.
+
+Running the application locally:
+Node.js must be installed if not already.
+Clone the application and install dependencies:
+npm install
+
+To start the application:
+npm start
+
+The application will then be accessible at:
+http://localhost:3000
+
+
+
+
+<!-- Below is what you get in the default README.md
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -65,4 +95,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->

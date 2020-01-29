@@ -73,7 +73,7 @@ this.setState({
     console.log("Adding task");
     console.log(taskToAdd);
 
-    // get the current  list of tasks from stat
+    // get the current list of tasks from state
     const currentTasks = this.state.tasks;
     // add the 'taskToAdd' to the array of tasks in state
     currentTasks.push(taskToAdd);
