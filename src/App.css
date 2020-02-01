@@ -1,3 +1,157 @@
+/* css for app */
+
+
 .completedTask {
   text-decoration: line-through;
+}
+
+.container {
+  padding: 0 1rem;
+  background-color: lightgray;
+}
+
+/* css for Header */
+
+.headerColour {
+  background-color: #464159;
+}
+
+.date {
+  color: #c7f0db;
+  font-size: medium;
+  padding-top: 15px;
+}
+
+.signInAndGreeting {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #c7f0db;
+  font-size: medium;
+  padding-top: 15px;
+}
+
+.searchBar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #c7f0db;
+  font-size: large;
+  padding-top: 15px;
+}
+
+.todoTitle {
+  color: #fddb3a;
+  font-size: xx-large;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+
+/* css for AddTask */
+
+.addTaskColour {
+  background-color: #464159;
+  padding-bottom: 20px;
+}
+
+.newTaskTitle {
+  color: #fddb3a;
+  font-size: large;
+}
+
+.input-group-append {
+  color: #fddb3a;
+  
+}
+
+
+/* css for TaskCount */
+.listTitleBar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fddb3a;
+  font-size: large;
+  background-color: #6c7b95;
+  padding-top: 5px; 
+  padding-bottom: 5px;
+}
+
+.listTitle {
+  text-align: left;
+}
+
+.taskCount {
+  text-align: right;
+}
+
+/* css for TaskList */
+
+.taskBoxes {
+  padding: 5px;
+}
+
+.priorityHeading {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #464159;
+  font-size: medium;
+}
+
+.taskText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #464159;
+  font-size: medium;
+  background-color: #8bbabb;
+}
+
+
+
+/* css for Tasks */
+
+.priorityHeading {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #464159;
+  font-size: medium;
+}
+
+.taskText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #464159;
+  font-size: medium;
+  background-color: #8bbabb;
+  padding: 0;
+}
+
+.btn-secondary {
+  color: #464159;
+  font-size: small;
+  background-color: #8bbabb;
+  padding: 1;
+}
+
+.taskBox {
+  background-color: #8bbabb;
+  padding-right: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.taskButtons {
+  background-color: #8bbabb;
+}
+
+.completedTask {
+  text-decoration: line-through;
+}
+
+/* css for Footer */
+.footerText {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #464159;
+  font-size: 10px;
+  padding: 10px 10px 10px 10px;
+  background-color: lightgrey;
 }

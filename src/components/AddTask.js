@@ -1,9 +1,9 @@
 import React from "react";
-import "../AddTask.css";
+import "../App.css";
 
 class AddTask extends React.Component {
   state = {
-    taskDescription: "To do ..."
+    taskDescription: "Task to do"
   };
 
   addTask = () => {
@@ -14,32 +14,30 @@ class AddTask extends React.Component {
     this.setState({
       taskDescription: event.target.value
     });
-  };
+ };
 
   render() {
     return (
-      <div className="container">
-        <body className="wallpaper">
-          <div className="row headerColour">
-            <div className="col-10 newTaskTitle">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Add task here ..."
-                onChange={this.taskDescriptionChanged}
-              />
-            </div>
-            <div className="col-2 input-group-append">
-              <button
-                type="button"
-                className="btn btn-secondary btn-xs"
-                onClick={this.addTask}
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </body>
+      <div className="row addTaskColour">
+        {/* This is the input field for a new task description */}
+        <div className="col-10 newTaskTitle">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Add new task ..."
+            onChange={this.taskDescriptionChanged}
+          />
+        </div>
+        {/* This is the button for adding a new task */}
+        <div className="col-2 input-group-append">
+          <button
+            type="button"
+            className="btn btn-secondary btn-xs"
+            onClick={this.addTask}
+          >
+            +
+          </button>
+        </div>
       </div>
     );
   }

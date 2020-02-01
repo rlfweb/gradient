@@ -1,21 +1,14 @@
-import React from 'react';
-import '../Footer.css';
+import React from "react";
+import "../App.css";
 
 class Footer extends React.Component {
-
   render() {
     return (
-
-
-
-      <div className="container wallpaper">
-
+      <div className="wallpaper">
         <footer className="footerText">
-          &copy;Gradient <br />
+          &copy; Gradient <br />
           Disclaimer: Lorem ipsum
         </footer>
-
-
       </div>
     );
   }

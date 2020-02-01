@@ -1,5 +1,5 @@
 import React from "react";
-import "../Tasks.css";
+import "../App.css";
 import Pen from "./pen.png";
 import Delete from "./delete.png";
 
@@ -33,35 +33,30 @@ class Tasks extends React.Component {
     }
 
     return (
-      <div className="container wallpaper">
-        <div className="row">
-          <div className="col-12 col-md-6 col-lg-3 taskBox">
-            <div className="col-12">
-              <div className="row taskButtons">
-                <div className="col-12 col-md-8 taskText">
-                {description}
-                </div>
+      <div className="row col-12 col-md-6 col-lg-4 taskBox">
+        {/* This is for the task description text */}
+        <div className="col-12 col-md-8 taskText">{description}</div>
+        {/* This is for the buttons to be grouped together as a pair */}
+        <div className="btn-group col-6 col-md-2">
+          {/* This is for the button that is clicked when task is completed */}
+          {!this.props.item.completed && (
+            <button
+              type="button"
+              className="btn btn-secondary btn-xs"
+              onClick={this.doneClicked}
+            >
+              <img src={Pen} alt="edit" />
+            </button>
+          )}
 
-                <div className="btn-group col-6 col-md-2">
-                  {!this.props.item.completed && (
-                    <button
-                      type="button"
-                      className="btn btn-secondary btn-xs"
-                      onClick={this.doneClicked}>
-                      <img src={Pen} alt="edit" />
-                    </button>
-                  )}
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-xs"
-                    onClick={this.deleteClicked}
-                  >
-                    <img src={Delete} alt="delete" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* This is for the delete button */}
+          <button
+            type="button"
+            className="btn btn-secondary btn-xs"
+            onClick={this.deleteClicked}
+          >
+            <img src={Delete} alt="delete" />
+          </button>
         </div>
       </div>
     );

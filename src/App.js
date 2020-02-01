@@ -3,7 +3,6 @@ import "./App.css";
 
 import Header from "./components/Header";
 import AddTask from "./components/AddTask";
-import Nav from "./components/Nav";
 import TaskCount from "./components/TaskCount";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
@@ -42,24 +41,22 @@ class App extends React.Component {
   completeTask = taskId => {
     // Firstly find the task that needs to be updated
     const tasksBeingUpdated = this.state.tasks; // this is an array of tasks
-    for( let i = 0; i < tasksBeingUpdated.length; i++ ) {
+    for (let i = 0; i < tasksBeingUpdated.length; i++) {
       const task = tasksBeingUpdated[i];
 
-      if(task.id === taskId ) {
-// we need to update a property on the identified task
-task.completed = true; 
-break; 
+      if (task.id === taskId) {
+        // we need to update a property on the identified task
+        task.completed = true;
+        break;
       }
     }
-    // just need to loop through the array until we find the one that matches and then boot us out of the array 
-  
-    
+    // just need to loop through the array until we find the one that matches and then boot us out of the array
 
     // Upate state to reflect the changes made to the task
-this.setState({
-  tasks: tasksBeingUpdated
-});
-  }
+    this.setState({
+      tasks: tasksBeingUpdated
+    });
+  };
 
   // just after taskDescription is where we might also set priorities or dates for tasks to be done by
   addTask = taskDescription => {
@@ -87,21 +84,22 @@ this.setState({
     return (
       <div>
         {/* // You add every file name within here */}
-        <Nav />
-        <Header />
-        <AddTask addTaskFunc={this.addTask} />
-        <TaskCount taskCount={this.state.tasks.length} />
-        <TaskList
-          taskCollection={this.state.tasks}
-          deleteTaskFunc={this.deleteTask}
-          completedTaskFunc={this.completeTask}
-        />
-        <Footer />
-      </div>
+        <div className="container">
+          <Header />
+          <AddTask addTaskFunc={this.addTask} />
+          <TaskCount taskCount={this.state.tasks.length} />
+          <TaskList
+            taskCollection={this.state.tasks}
+            deleteTaskFunc={this.deleteTask}
+            completedTaskFunc={this.completeTask} />
+          <Footer />
+        </div>
+        </div>
     );
   }
 }
 
+export default App;
 
 //in React you have to use className not class, as class is a JS reserved word.
 
@@ -126,5 +124,3 @@ this.setState({
 //     </div>
 //   );
 // }
-
-export default App;
