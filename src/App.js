@@ -162,7 +162,7 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
           <WorkTaskCount workTaskCount={this.state.workTasks.length} />
           <WorkTaskList
             workTaskCollection={this.state.workTasks}
@@ -171,7 +171,7 @@ class App extends React.Component {
             <AddWorkTask addWorkTaskFunc={this.addWorkTask} />
             </div>
 
-            <div className="col-6">
+            <div className="col-12 col-md-6">
           <HomeTaskCount homeTaskCount={this.state.homeTasks.length} />
           <HomeTaskList
             homeTaskCollection={this.state.homeTasks}

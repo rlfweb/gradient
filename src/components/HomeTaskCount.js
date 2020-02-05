@@ -6,8 +6,8 @@ class HomeTaskCount extends React.Component {
     return (
       
       <div className="listTitleBar row col-12">
-        <div className="col-10 homeListTitle">HOME</div>
-        <div className="col-2 homeTaskCount">{this.props.homeTaskCount}</div>
+        <div className="col-10 listTitle">HOME</div>
+        <div className="col-2 taskCount">{this.props.homeTaskCount}</div>
       </div>
     );
   }

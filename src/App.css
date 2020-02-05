@@ -1,13 +1,8 @@
 /* css for app */
 
 
-.completedTask {
-  color: #c7f0db;
-}
-
 .container {
-  padding: 0 1rem;
-  background-color: lightgray;
+  background-color: #464159;
 }
 
 /* css for Header */
@@ -40,7 +35,7 @@
 
 .todoTitle {
   color: #fddb3a;
-  font-size: xx-large;
+  font-size: xxx-large;
   padding-top: 10px;
   padding-bottom: 15px;
 }
@@ -50,6 +45,7 @@
 
 .addTaskColour {
   background-color: #464159;
+  color: #fddb3a;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -61,9 +57,20 @@
 
 .input-group-append {
   color: #fddb3a;
-  
+  align: right;
 }
 
+.btn-group {
+  align: right;
+}
+
+input[type=text] {
+  background-color: #8bbabb;
+}
+
+.placeholderColour {
+  color: #fddb3a;
+}
 
 /* css for TaskCount */
 .listTitleBar {
@@ -77,6 +84,7 @@
 }
 
 .listTitle {
+  font-size: x-large;
   text-align: left;
   text-decoration: solid;
   margin: 0px;
@@ -84,6 +92,11 @@
 }
 
 .taskCount {
+  font-size: x-large;
+  text-align: left;
+  text-decoration: solid;
+  margin: 0px;
+  padding: 0px;
   text-align: right;
 }
 
@@ -93,18 +106,11 @@
   padding: 5px;
 }
 
-.priorityHeading {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #464159;
-  font-size: medium;
-}
-
 .taskText {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #464159;
-  font-size: medium;
+  font-size: large;
   background-color: #8bbabb;
 }
 
@@ -112,18 +118,12 @@
 
 /* css for Tasks */
 
-.priorityHeading {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #464159;
-  font-size: medium;
-}
 
-.workTaskText {
+.taskText {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #464159;
-  font-size: medium;
+  font-size: large;
   background-color: #8bbabb;
   padding: 0;
 }
@@ -146,16 +146,26 @@
   background-color: #8bbabb;
 }
 
+.completedTask {
+  color: #c7f0db;
+}
+
+
+
 /* css for Footer */
 .footerText {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #464159;
+  color: #c7f0db;
   font-size: 10px;
   padding: 10px 10px 10px 10px;
-  background-color: lightgrey;
+  background-color: #464159;
 }
 
 .red {
   background-color: red;
+}
+
+.green {
+  background-color: green;
 }
