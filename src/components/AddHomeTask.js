@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import plus from "./plus.png";
 
 class AddHomeTask extends React.Component {
   state = {
@@ -18,8 +19,7 @@ class AddHomeTask extends React.Component {
 
   render() {
     return (
-      <div className="row addTaskColour">
-        <div className="col-6">
+      <div className="row addTaskColour col-12">
           {/* This is the input field for a new task description */}
           <div className="col-10 newTaskTitle">
             <input
@@ -35,13 +35,10 @@ class AddHomeTask extends React.Component {
               type="button"
               className="btn btn-secondary btn-xs"
               onClick={this.addHomeTask}>
-              +
+              <img src={plus} alt="add" />
             </button>
           </div>
         </div>
-        <div className="col-6"></div>
-        
-      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import Checked from "./checked.png";
-import Cross from "./cross-light.png";
+import Cross from "./cross.png";
 
 class HomeTasks extends React.Component {
   
