@@ -1,18 +1,18 @@
 import React from "react";
 import "../App.css";
 
-class AddWorkTask extends React.Component {
+class AddHomeTask extends React.Component {
   state = {
-    taskDescription: "Work task to do"
+    taskDescription: "Home task to do"
   };
 
-  addWorkTask = () => {
-    this.props.addWorkTaskFunc(this.state.workTaskDescription);
+  addHomeTask = () => {
+    this.props.addHomeTaskFunc(this.state.homeTaskDescription);
   };
 
-  workTaskDescriptionChanged = event => {
+  homeTaskDescriptionChanged = event => {
     this.setState({
-      workTaskDescription: event.target.value
+      homeTaskDescription: event.target.value
     });
   };
 
@@ -25,8 +25,8 @@ class AddWorkTask extends React.Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Add new work task ..."
-              onChange={this.workTaskDescriptionChanged}
+              placeholder="Add new home task ..."
+              onChange={this.homeTaskDescriptionChanged}
             />
           </div>
           {/* This is the button for adding a new task */}
@@ -34,7 +34,7 @@ class AddWorkTask extends React.Component {
             <button
               type="button"
               className="btn btn-secondary btn-xs"
-              onClick={this.addWorkTask}>
+              onClick={this.addHomeTask}>
               +
             </button>
           </div>
@@ -47,4 +47,4 @@ class AddWorkTask extends React.Component {
 }
 
 // REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
-export default AddWorkTask;
+export default AddHomeTask;

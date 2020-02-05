@@ -3,14 +3,14 @@ import "../App.css";
 import Checked from "./checked.png";
 import Cross from "./cross-light.png";
 
-class WorkTasks extends React.Component {
+class HomeTasks extends React.Component {
   
-  deleteWorkClicked = () => {
-    this.props.deleteWorkTaskFunc(this.props.workItem.id);
+  deleteHomeClicked = () => {
+    this.props.deleteHomeTaskFunc(this.props.homeItem.id);
   };
 
   doneClicked = () => {
-    this.props.completedWorkTaskFunc(this.props.workItem.id);
+    this.props.completedHomeTaskFunc(this.props.homeItem.id);
   };
 
   render() {
@@ -18,18 +18,18 @@ class WorkTasks extends React.Component {
     let description;
 
     // this is saying, if the item is completed ...
-    if (this.props.workItem.completed) {
+    if (this.props.homeItem.completed) {
       // ... I want it to be a div and it will look like this - with strikethrough
       description = (
         <div className="col-12 col-md-8 completedTask">
-          {this.props.workItem.description}
+          {this.props.homeItem.description}
         </div>
       );
       // if the item isn't completed ...
     } else {
       // ... it will look like this
       description = (
-        <div className="col-12 col-md-8">{this.props.workItem.description}</div>
+        <div className="col-12 col-md-8">{this.props.homeItem.description}</div>
       );
     }
 
@@ -40,7 +40,7 @@ class WorkTasks extends React.Component {
         {/* This is for the buttons to be grouped together as a pair */}
         <div className="btn-group col-6 col-md-2">
           {/* This is for the button that is clicked when task is completed */}
-          {!this.props.workItem.completed && (
+          {!this.props.homeItem.completed && (
             <button
               type="button"
               className="btn btn-secondary btn-xs"
@@ -54,7 +54,7 @@ class WorkTasks extends React.Component {
           <button
             type="button"
             className="btn btn-secondary btn-xs"
-            onClick={this.deleteWorkClicked}
+            onClick={this.deleteHomeClicked}
           >
             <img src={Cross} alt="delete" />
           </button>
@@ -65,4 +65,4 @@ class WorkTasks extends React.Component {
 }
 
 // REMEMBER TO CHANGE THIS BELOW TO FILENAME i.e. from App to Header
-export default WorkTasks;
+export default HomeTasks;

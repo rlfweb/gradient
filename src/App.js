@@ -5,6 +5,9 @@ import Header from "./components/Header";
 import AddWorkTask from "./components/AddWorkTask";
 import WorkTaskList from "./components/WorkTaskList";
 import WorkTaskCount from "./components/WorkTaskCount";
+import AddHomeTask from "./components/AddHomeTask";
+import HomeTaskList from "./components/HomeTaskList";
+import HomeTaskCount from "./components/HomeTaskCount";
 import Footer from "./components/Footer";
 import uuidv4 from "uuid/v4";
 
@@ -12,6 +15,12 @@ class App extends React.Component {
   // good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
   state = {
     workTasks: [
+      { id: uuidv4(), description: "Phone chat with Sarah", completed: false },
+      { id: uuidv4(), description: "Learn JS", completed: false },
+      { id: uuidv4(), description: "View webinar", completed: false },
+      { id: uuidv4(), description: "Spray mount for cards", completed: false }
+    ],
+    homeTasks: [
       { id: uuidv4(), description: "Reply to Viv", completed: false },
       { id: uuidv4(), description: "Get bike serviced", completed: false },
       { id: uuidv4(), description: "Take back Sloth", completed: false },
@@ -80,18 +89,97 @@ class App extends React.Component {
     });
   };
 
+
+
+  // As state lives in app.js it is only within app.js that we should be altering the state, so the delete stuff goes in here
+
+  deleteHomeTask = homeTaskId => {
+    // Tasks will be deleted when this function runs
+
+    // I need the list of tasks from state
+    const homeTasks = this.state.homeTasks;
+
+    // Make sure the id of what we are deleting matches the id of what we want to delete
+    const updatedHomeTasks = homeTasks.filter(item => item.id !== homeTaskId);
+
+    // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
+    this.setState({
+      homeTasks: updatedHomeTasks
+    });
+  };
+
+  // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
+
+  completeHomeTask = homeTaskId => {
+    // Firstly find the task that needs to be updated
+    const homeTasksBeingUpdated = this.state.homeTasks; // this is an array of tasks
+    for (let i = 0; i < homeTasksBeingUpdated.length; i++) {
+      const homeTask = homeTasksBeingUpdated[i];
+
+      if (homeTask.id === homeTaskId) {
+        // we need to update a property on the identified task
+        homeTask.completed = true;
+        break;
+      }
+    }
+    // just need to loop through the array until we find the one that matches and then boot us out of the array
+
+    // Upate state to reflect the changes made to the task
+    this.setState({
+      homeTasks: homeTasksBeingUpdated
+    });
+  };
+
+  // just after taskDescription is where we might also set priorities or dates for tasks to be done by
+  addHomeTask = homeTaskDescription => {
+    // Define the task that is being added
+    const homeTaskToAdd = {
+      id: uuidv4(),
+      description: homeTaskDescription,
+      completed: false
+    };
+
+    console.log("Adding home task");
+    console.log(homeTaskToAdd);
+
+    // get the current list of tasks from state
+    const currentHomeTasks = this.state.homeTasks;
+    // add the 'taskToAdd' to the array of tasks in state
+    currentHomeTasks.push(homeTaskToAdd);
+    // update the state
+    this.setState({
+      homeTasks: currentHomeTasks
+    });
+  };
+
+
+
+
   render() {
     return (
       <div>
         {/* // You add every file name within here */}
         <div className="container">
           <Header />
+          <div className="row">
+          <div className="col-6">
           <WorkTaskCount workTaskCount={this.state.workTasks.length} />
           <WorkTaskList
             workTaskCollection={this.state.workTasks}
             deleteWorkTaskFunc={this.deleteWorkTask}
             completedWorkTaskFunc={this.completeWorkTask} />
             <AddWorkTask addWorkTaskFunc={this.addWorkTask} />
+            </div>
+
+            <div className="col-6">
+          <HomeTaskCount homeTaskCount={this.state.homeTasks.length} />
+          <HomeTaskList
+            homeTaskCollection={this.state.homeTasks}
+            deleteHomeTaskFunc={this.deleteHomeTask}
+            completedHomeTaskFunc={this.completeHomeTask} />
+            <AddHomeTask addHomeTaskFunc={this.addHomeTask} />
+            </div>
+            </div>
           <Footer />
         </div>
         </div>
