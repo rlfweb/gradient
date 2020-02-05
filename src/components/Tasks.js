@@ -33,7 +33,7 @@ class Tasks extends React.Component {
     }
 
     return (
-      <div className="row col-12 col-md-6 col-lg-4 taskBox">
+      <div className="row col-12 col-md-6 col-lg-6 taskBox">
         {/* This is for the task description text */}
         <div className="col-12 col-md-8 taskText">{description}</div>
         {/* This is for the buttons to be grouped together as a pair */}
