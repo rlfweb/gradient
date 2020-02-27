@@ -21,7 +21,7 @@ class App extends React.Component {
       { id: uuidv4(), description: "Spray mount for cards", completed: false }
     ],
     homeTasks: [
-      { id: uuidv4(), description: "Reply to Viv", completed: false },
+      { id: uuidv4(), description: "Reply to VP and Felix", completed: false },
       { id: uuidv4(), description: "Get bike serviced", completed: false },
       { id: uuidv4(), description: "Take back Sloth", completed: false },
       { id: uuidv4(), description: "Food for lunch", completed: false }
