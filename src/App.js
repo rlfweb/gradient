@@ -10,23 +10,39 @@ import HomeTaskList from "./components/HomeTaskList";
 import HomeTaskCount from "./components/HomeTaskCount";
 import Footer from "./components/Footer";
 import uuidv4 from "uuid/v4";
+import axios from "axios";
 
 class App extends React.Component {
   // good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
   state = {
     workTasks: [
-      { id: uuidv4(), description: "Phone chat with Sarah", completed: false },
-      { id: uuidv4(), description: "Learn JS", completed: false },
-      { id: uuidv4(), description: "View webinar", completed: false },
-      { id: uuidv4(), description: "Spray mount for cards", completed: false }
     ],
+
     homeTasks: [
-      { id: uuidv4(), description: "Reply to VP and Felix", completed: false },
-      { id: uuidv4(), description: "Get bike serviced", completed: false },
-      { id: uuidv4(), description: "Take back Sloth", completed: false },
-      { id: uuidv4(), description: "Food for lunch", completed: false }
     ]
   };
+
+  // this fires as soon as page loads, which says bring my content in from my database
+  componentDidMount = () => {
+    // Fetch tasks from API
+    axios.get('https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+    .then((response) => {
+      // handle success
+      this.setState({
+        tasks: response.data.tasks
+      })
+    })
+    .catch((error) => {
+      // handle error
+      console.error(error);
+    });
+  }
+  
+//POST IS GOING TO BE A CLICK EVENT
+// this website has useful info for us https://www.npmjs.com/package/axios
+//axios.post
+// axios.delete
+// axios.put
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the delete stuff goes in here
 
