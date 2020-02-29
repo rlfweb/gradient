@@ -54,7 +54,7 @@ class App extends React.Component {
     const workTasks = this.state.workTasks;
 
     // Make sure the id of what we are deleting matches the id of what we want to delete
-    const updatedWorkTasks = workTasks.filter(item => item.id !== workTaskId);
+    const updatedWorkTasks = workTasks.filter(item => item.taskId !== workTaskId);
 
     // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
     this.setState({
@@ -70,7 +70,7 @@ class App extends React.Component {
     for (let i = 0; i < workTasksBeingUpdated.length; i++) {
       const workTask = workTasksBeingUpdated[i];
 
-      if (workTask.id === workTaskId) {
+      if (workTask.taskId === workTaskId) {
         // we need to update a property on the identified task
         workTask.completed = true;
         break;
@@ -88,7 +88,6 @@ class App extends React.Component {
   addWorkTask = workTaskDescription => {
     // Define the task that is being added
     const workTaskToAdd = {
-      id: uuidv4(),
       description: workTaskDescription,
       completed: false
     };
@@ -117,7 +116,7 @@ class App extends React.Component {
     const homeTasks = this.state.homeTasks;
 
     // Make sure the id of what we are deleting matches the id of what we want to delete
-    const updatedHomeTasks = homeTasks.filter(item => item.id !== homeTaskId);
+    const updatedHomeTasks = homeTasks.filter(item => item.taskId !== homeTaskId);
 
     // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
     this.setState({
@@ -133,7 +132,7 @@ class App extends React.Component {
     for (let i = 0; i < homeTasksBeingUpdated.length; i++) {
       const homeTask = homeTasksBeingUpdated[i];
 
-      if (homeTask.id === homeTaskId) {
+      if (homeTask.taskId === homeTaskId) {
         // we need to update a property on the identified task
         homeTask.completed = true;
         break;
@@ -151,7 +150,6 @@ class App extends React.Component {
   addHomeTask = homeTaskDescription => {
     // Define the task that is being added
     const homeTaskToAdd = {
-      id: uuidv4(),
       description: homeTaskDescription,
       completed: false
     };

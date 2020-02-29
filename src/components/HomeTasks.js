@@ -6,37 +6,37 @@ import Cross from "./cross.png";
 class HomeTasks extends React.Component {
   
   deleteHomeClicked = () => {
-    this.props.deleteHomeTaskFunc(this.props.homeItem.id);
+    this.props.deleteHomeTaskFunc(this.props.homeItem.taskId);
   };
 
   doneClicked = () => {
-    this.props.completedHomeTaskFunc(this.props.homeItem.id);
+    this.props.completedHomeTaskFunc(this.props.homeItem.taskId);
   };
 
   render() {
     // description empty by default
-    let description;
+    let taskDescription;
 
     // this is saying, if the item is completed ...
     if (this.props.homeItem.completed) {
       // ... I want it to be a div and it will look like this - with strikethrough
-      description = (
+      taskDescription = (
         <div className="col-12 col-md-8 completedTask">
-          {this.props.homeItem.description}
+          {this.props.homeItem.taskDescription}
         </div>
       );
       // if the item isn't completed ...
     } else {
       // ... it will look like this
-      description = (
-        <div className="col-12 col-md-8">{this.props.homeItem.description}</div>
+      taskDescription = (
+        <div className="col-12 col-md-8">{this.props.homeItem.taskDescription}</div>
       );
     }
 
     return (
       <div className="row col-12 col-md-12 col-lg-12 taskBox">
         {/* This is for the task description text */}
-        <div className="col-12 col-md-8 taskText">{description}</div>
+        <div className="col-12 col-md-8 taskText">{taskDescription}</div>
         {/* This is for the buttons to be grouped together as a pair */}
         <div className="btn-group col-6 col-md-2">
           {/* This is for the button that is clicked when task is completed */}

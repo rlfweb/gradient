@@ -8,7 +8,7 @@ class WorkTaskList extends React.Component {
       <div>
         {this.props.workTaskCollection.map(workTaskItem => (
           <WorkTasks
-            key={workTaskItem.id}
+            key={workTaskItem.taskId}
             workItem={workTaskItem}
             deleteWorkTaskFunc={this.props.deleteWorkTaskFunc}
             completedWorkTaskFunc={this.props.completedWorkTaskFunc}
