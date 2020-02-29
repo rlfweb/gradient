@@ -29,7 +29,8 @@ class App extends React.Component {
     .then((response) => {
       // handle success
       this.setState({
-        tasks: response.data.tasks
+        workTasks: response.data.tasks,
+        homeTasks: response.data.tasks
       })
     })
     .catch((error) => {
