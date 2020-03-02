@@ -11,11 +11,9 @@ import HomeTaskCount from "./components/HomeTaskCount";
 import Footer from "./components/Footer";
 import axios from "axios";
 
-
 //Filter the data from database:
 //const workTaskData = this.state;
 //const workTasks = workTaskData.filter( (tasks) => tasks.category.includes("WORK"));
-
 
 class App extends React.Component {
   // good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
@@ -27,25 +25,26 @@ class App extends React.Component {
   // this fires as soon as page loads, which says bring my content in from my database
   componentDidMount = () => {
     // Fetch tasks from API
-    axios.get('https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks')
-    .then((response) => {
-      // handle success
-      this.setState({
-        workTasks: response.data.tasks,
-        homeTasks: response.data.tasks
+    axios
+      .get("https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks")
+      .then(response => {
+        // handle success
+        this.setState({
+          workTasks: response.data.tasks,
+          homeTasks: response.data.tasks
+        });
       })
-    })
-    .catch((error) => {
-      // handle error
-      console.error(error);
-    });
-  }
-  
-//POST IS GOING TO BE A CLICK EVENT
-// this website has useful info for us https://www.npmjs.com/package/axios
-//axios.post
-// axios.delete
-// axios.put
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
+  };
+
+  //POST IS GOING TO BE A CLICK EVENT
+  // this website has useful info for us https://www.npmjs.com/package/axios
+  //axios.post
+  // axios.delete
+  // axios.put
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the delete stuff goes in here
 
@@ -55,13 +54,24 @@ class App extends React.Component {
     // I need the list of tasks from state
     const workTasks = this.state.workTasks;
 
-    // Make sure the id of what we are deleting matches the id of what we want to delete
-    const updatedWorkTasks = workTasks.filter(item => item.taskId !== workTaskId);
+    axios
+      .delete(
+        `https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${workTaskId}`
+      )
+      .then(response => {
+        // Make sure the id of what we are deleting matches the id of what we want to delete
+        const updatedWorkTasks = workTasks.filter(
+          item => item.taskId !== workTaskId
+        );
 
-    // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
-    this.setState({
-      workTasks: updatedWorkTasks
-    });
+        // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
+        this.setState({
+          workTasks: updatedWorkTasks
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
@@ -86,46 +96,42 @@ class App extends React.Component {
     });
   };
 
-  // just after taskDescription is where we might also set priorities or dates for tasks to be done by
+
+
   addWorkTask = workTaskDescription => {
     // Define the task that is being added
-  
+
     const workTaskToAdd = {
-        taskDescription : workTaskDescription,
-        completed : 0,
-        category : "WORK",
-        userId : 1
-      }
-    
+      taskDescription: workTaskDescription,
+      completed: 0,
+      category: "WORK",
+      userId: 1
+    };
 
-    axios.post('https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks', workTaskToAdd)
-    .then((response) => {
-      
-    workTaskToAdd.taskId = response.data.tasks.taskId;
-    console.log(workTaskToAdd);
-      // get the current list of tasks from state
-    const currentWorkTasks = this.state.workTasks;
+    axios
+      .post(
+        "https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks",
+        workTaskToAdd
+      )
+      .then(response => {
+        workTaskToAdd.taskId = response.data.tasks.taskId;
+        console.log(workTaskToAdd);
+        // get the current list of tasks from state
+        const currentWorkTasks = this.state.workTasks;
 
-    // add the 'taskToAdd' to the array of tasks in state
-    currentWorkTasks.push(workTaskToAdd);
+        // add the 'taskToAdd' to the array of tasks in state
+        currentWorkTasks.push(workTaskToAdd);
 
-    // update the state
-    this.setState({
-      workTasks: currentWorkTasks
-    });
-      // handle success
-      // this.setState({
-      // workTasks: response.data.tasks,
-      // homeTasks: response.data.tasks
-      // })
-    })
-    .catch((error) => {
-      // handle error
-      console.error(error);
-    });
+        // update the state
+        this.setState({
+          workTasks: currentWorkTasks
+        });
+      })
+      .catch(error => {
+        // handle error
+        console.error(error);
+      });
   };
-
-
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the delete stuff goes in here
 
@@ -136,7 +142,9 @@ class App extends React.Component {
     const homeTasks = this.state.homeTasks;
 
     // Make sure the id of what we are deleting matches the id of what we want to delete
-    const updatedHomeTasks = homeTasks.filter(item => item.taskId !== homeTaskId);
+    const updatedHomeTasks = homeTasks.filter(
+      item => item.taskId !== homeTaskId
+    );
 
     // I need to update the state with the new array of tasks i.e. without the one that has just been deleted
     this.setState({
@@ -187,9 +195,6 @@ class App extends React.Component {
     });
   };
 
-
-
-
   render() {
     return (
       <div>
@@ -197,27 +202,29 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <div className="row">
-          <div className="col-12 col-md-6">
-          <WorkTaskCount workTaskCount={this.state.workTasks.length} />
-          <WorkTaskList
-            workTaskCollection={this.state.workTasks}
-            deleteWorkTaskFunc={this.deleteWorkTask}
-            completedWorkTaskFunc={this.completeWorkTask} />
-            <AddWorkTask addWorkTaskFunc={this.addWorkTask} />
+            <div className="col-12 col-md-6">
+              <WorkTaskCount workTaskCount={this.state.workTasks.length} />
+              <WorkTaskList
+                workTaskCollection={this.state.workTasks}
+                deleteWorkTaskFunc={this.deleteWorkTask}
+                completedWorkTaskFunc={this.completeWorkTask}
+              />
+              <AddWorkTask addWorkTaskFunc={this.addWorkTask} />
             </div>
 
             <div className="col-12 col-md-6">
-          <HomeTaskCount homeTaskCount={this.state.homeTasks.length} />
-          <HomeTaskList
-            homeTaskCollection={this.state.homeTasks}
-            deleteHomeTaskFunc={this.deleteHomeTask}
-            completedHomeTaskFunc={this.completeHomeTask} />
-            <AddHomeTask addHomeTaskFunc={this.addHomeTask} />
+              <HomeTaskCount homeTaskCount={this.state.homeTasks.length} />
+              <HomeTaskList
+                homeTaskCollection={this.state.homeTasks}
+                deleteHomeTaskFunc={this.deleteHomeTask}
+                completedHomeTaskFunc={this.completeHomeTask}
+              />
+              <AddHomeTask addHomeTaskFunc={this.addHomeTask} />
             </div>
-            </div>
+          </div>
           <Footer />
         </div>
-        </div>
+      </div>
     );
   }
 }
