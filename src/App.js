@@ -9,17 +9,19 @@ import AddHomeTask from "./components/AddHomeTask";
 import HomeTaskList from "./components/HomeTaskList";
 import HomeTaskCount from "./components/HomeTaskCount";
 import Footer from "./components/Footer";
-import uuidv4 from "uuid/v4";
 import axios from "axios";
+
+
+//Filter the data from database:
+//const workTaskData = this.state;
+//const workTasks = workTaskData.filter( (tasks) => tasks.category.includes("WORK"));
+
 
 class App extends React.Component {
   // good to give tasks a unique id, so they are unique, so if there are more than one identical task, both don't get deleted, when one delete button is clicked
   state = {
-    workTasks: [
-    ],
-
-    homeTasks: [
-    ]
+    workTasks: [],
+    homeTasks: []
   };
 
   // this fires as soon as page loads, which says bring my content in from my database
@@ -87,21 +89,39 @@ class App extends React.Component {
   // just after taskDescription is where we might also set priorities or dates for tasks to be done by
   addWorkTask = workTaskDescription => {
     // Define the task that is being added
+  
     const workTaskToAdd = {
-      description: workTaskDescription,
-      completed: false
-    };
+        taskDescription : workTaskDescription,
+        completed : 0,
+        category : "WORK",
+        userId : 1
+      }
+    
 
-    console.log("Adding work task");
+    axios.post('https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks', workTaskToAdd)
+    .then((response) => {
+      
+    workTaskToAdd.taskId = response.data.tasks.taskId;
     console.log(workTaskToAdd);
-
-    // get the current list of tasks from state
+      // get the current list of tasks from state
     const currentWorkTasks = this.state.workTasks;
+
     // add the 'taskToAdd' to the array of tasks in state
     currentWorkTasks.push(workTaskToAdd);
+
     // update the state
     this.setState({
       workTasks: currentWorkTasks
+    });
+      // handle success
+      // this.setState({
+      // workTasks: response.data.tasks,
+      // homeTasks: response.data.tasks
+      // })
+    })
+    .catch((error) => {
+      // handle error
+      console.error(error);
     });
   };
 
