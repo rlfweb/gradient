@@ -77,25 +77,67 @@ class App extends React.Component {
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
 
-  completeWorkTask = workTaskId => {
-    // Firstly find the task that needs to be updated
-    const workTasksBeingUpdated = this.state.workTasks; // this is an array of tasks
-    for (let i = 0; i < workTasksBeingUpdated.length; i++) {
-      const workTask = workTasksBeingUpdated[i];
 
-      if (workTask.taskId === workTaskId) {
-        // we need to update a property on the identified task
+
+
+
+
+  completeWorkTask = workTaskId => {
+		// Firstly find the task that needs to be updated
+		const workTasksBeingUpdated = this.state.workTasks; 
+		for (let i = 0; i < workTasksBeingUpdated.length; i++) {
+      const workTask = workTasksBeingUpdated[i];
+      
+			if (workTask.taskId === workTaskId) {
         workTask.completed = true;
         break;
-      }
-    }
-    // just need to loop through the array until we find the one that matches and then boot us out of the array
+			}
+		}
+	
+		axios
+			.put(
+				`https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${workTaskId}`
+			)
+			.then(response => {
+          const workTaskToEdit = workTasksBeingUpdated.filter( item => item.taskId !== workTaskId
+          );
+          
+				this.setState({
+					workTasks: workTasksBeingUpdated
+				});
+			})
+			.catch(function(error) {
+				console.error(error);
+			});
+	};
 
-    // Upate state to reflect the changes made to the task
-    this.setState({
-      workTasks: workTasksBeingUpdated
-    });
-  };
+  // completeWorkTask = workTaskId => {
+  //   // Firstly find the task that needs to be updated
+  //   const workTasksBeingUpdated = this.state.workTasks; // this is an array of tasks
+  //   for (let i = 0; i < workTasksBeingUpdated.length; i++) {
+  //     const workTask = workTasksBeingUpdated[i];
+
+  //     if (workTask.taskId === workTaskId) {
+  //       // we need to update a property on the identified task
+  //       workTask.completed = true;
+  //       break;
+  //     }
+  //   }
+  //   // just need to loop through the array until we find the one that matches and then boot us out of the array
+
+  //   // Upate state to reflect the changes made to the task
+  //   this.setState({
+  //     workTasks: workTasksBeingUpdated
+  //   });
+  // };
+
+
+
+
+
+
+
+
 
 
 
@@ -155,6 +197,14 @@ class App extends React.Component {
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
 
+
+
+
+
+
+
+
+  
   completeHomeTask = homeTaskId => {
     // Firstly find the task that needs to be updated
     const homeTasksBeingUpdated = this.state.homeTasks; // this is an array of tasks
@@ -174,6 +224,12 @@ class App extends React.Component {
       homeTasks: homeTasksBeingUpdated
     });
   };
+
+
+
+
+
+
 
   // just after taskDescription is where we might also set priorities or dates for tasks to be done by
   addHomeTask = homeTaskDescription => {
