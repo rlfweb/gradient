@@ -34,11 +34,11 @@ class WorkTasks extends React.Component {
     }
 
     return (
-      <div className="row col-12 col-md-12 col-lg-12 taskBox">
+      <div className="row col-12 taskBox">
         {/* This is for the task description text */}
-        <div className="col-12 col-md-8 taskText">{taskDescription}</div>
+        <div className="col-12 col-lg-9 taskText">{taskDescription}</div>
         {/* This is for the buttons to be grouped together as a pair */}
-        <div className="btn-group col-6 col-md-2">
+        <div className="col-12 col-lg-3">
           {/* This is for the button that is clicked when task is completed */}
           {!this.props.workItem.completed && (
             <button

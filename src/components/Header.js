@@ -18,7 +18,7 @@ class Header extends React.Component {
     return (
       <div className="row headerColour">
         <div className="signInAndGreeting col-12 col-md-4">
-          Log in / Sign up / Hello [Susan]
+          Log in / Sign up / Hello [Name]
         </div>
 
         <div className="date col-12 col-md-4 text-lg-center">
@@ -26,10 +26,10 @@ class Header extends React.Component {
         </div>
 
         <div className="searchBar col-12 col-md-4 text-lg-right">
-          <input type="text" className="input" placeholder="Search..." />
+          <input type="text" className="input" placeholder="[Search...]" />
         </div>
 
-        <div className="headerColour col-12 todoTitle">Susan's To Do Lists</div>
+        <div className="headerColour col-12 todoTitle">[Name]'s To Do Lists</div>
       </div>
     );
   }

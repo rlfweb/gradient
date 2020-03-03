@@ -28,6 +28,7 @@ class App extends React.Component {
     axios
       .get("https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks")
       .then(response => {
+        
         // handle success
         this.setState({
           workTasks: response.data.tasks,
@@ -201,11 +202,11 @@ class App extends React.Component {
         {/* // You add every file name within here */}
         <div className="container">
           <Header />
-          <div className="row">
+          <div className="row mainBox">
             <div className="col-12 col-md-6">
               <WorkTaskCount workTaskCount={this.state.workTasks.length} />
               <WorkTaskList
-                workTaskCollection={this.state.workTasks}
+                workTaskCollection={this.state.workTasks} 
                 deleteWorkTaskFunc={this.deleteWorkTask}
                 completedWorkTaskFunc={this.completeWorkTask}
               />
@@ -215,7 +216,7 @@ class App extends React.Component {
             <div className="col-12 col-md-6">
               <HomeTaskCount homeTaskCount={this.state.homeTasks.length} />
               <HomeTaskList
-                homeTaskCollection={this.state.homeTasks}
+                homeTaskCollection={this.state.homeTasks} 
                 deleteHomeTaskFunc={this.deleteHomeTask}
                 completedHomeTaskFunc={this.completeHomeTask}
               />
