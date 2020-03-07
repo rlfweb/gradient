@@ -192,6 +192,11 @@ class App extends React.Component {
     // I need the list of tasks from state
     const homeTasks = this.state.homeTasks;
 
+    axios
+      .delete(
+        `https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${homeTaskId}`
+      )
+      .then(response => {
     // Make sure the id of what we are deleting matches the id of what we want to delete
     const updatedHomeTasks = homeTasks.filter(
       item => item.taskId !== homeTaskId
@@ -201,7 +206,11 @@ class App extends React.Component {
     this.setState({
       homeTasks: updatedHomeTasks
     });
-  };
+  })
+  .catch(error => {
+    console.error(error);
+  });
+};
 
   // As state lives in app.js it is only within app.js that we should be altering the state, so the edit/complete stuff goes in here
 
