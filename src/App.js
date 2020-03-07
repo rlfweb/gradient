@@ -28,11 +28,13 @@ class App extends React.Component {
     axios
       .get("https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks")
       .then(response => {
-        
+
+        const workTasks = response.data.tasks.filter( (task) => task.category.includes("WORK"));
+        const homeTasks = response.data.tasks.filter( (task) => task.category.includes("HOME"));
         // handle success
         this.setState({
-          workTasks: response.data.tasks,
-          homeTasks: response.data.tasks
+          workTasks: workTasks,
+          homeTasks: homeTasks
         });
       })
       .catch(error => {
@@ -83,24 +85,29 @@ class App extends React.Component {
 
 
   completeWorkTask = workTaskId => {
-		// Firstly find the task that needs to be updated
-		const workTasksBeingUpdated = this.state.workTasks; 
-		for (let i = 0; i < workTasksBeingUpdated.length; i++) {
-      const workTask = workTasksBeingUpdated[i];
-      
-			if (workTask.taskId === workTaskId) {
-        workTask.completed = true;
-        break;
-			}
-		}
-	
+		
+  
+    const workTaskToEdit = {
+      taskId : workTaskId
+    }
+
+
 		axios
 			.put(
-				`https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${workTaskId}`
+				`https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${workTaskId}`, workTaskToEdit,
 			)
 			.then(response => {
-          const workTaskToEdit = workTasksBeingUpdated.filter( item => item.taskId !== workTaskId
-          );
+
+        // Firstly find the task that needs to be updated
+        const workTasksBeingUpdated = this.state.workTasks; 
+        for (let i = 0; i < workTasksBeingUpdated.length; i++) {
+          const workTask = workTasksBeingUpdated[i];
+          
+          if (workTask.taskId === workTaskId) {
+            workTask.completed = true;
+            break;
+          }
+        }
           
 				this.setState({
 					workTasks: workTasksBeingUpdated
@@ -136,7 +143,7 @@ class App extends React.Component {
 
 
 
-
+  
 
 
 
@@ -150,7 +157,7 @@ class App extends React.Component {
       category: "WORK",
       userId: 1
     };
-
+// add WORK in as a parameter and then don't have to have duplicate code. 
     axios
       .post(
         "https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks",
@@ -164,6 +171,7 @@ class App extends React.Component {
 
         // add the 'taskToAdd' to the array of tasks in state
         currentWorkTasks.push(workTaskToAdd);
+    
 
         // update the state
         this.setState({
@@ -252,6 +260,8 @@ class App extends React.Component {
     });
   };
 
+
+  
   render() {
     return (
       <div>
