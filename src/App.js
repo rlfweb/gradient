@@ -223,7 +223,17 @@ class App extends React.Component {
 
   
   completeHomeTask = homeTaskId => {
-    // Firstly find the task that needs to be updated
+      
+    const homeTaskToEdit = {
+      taskId : homeTaskId
+    }
+
+    axios
+			.put(
+				`https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${homeTaskId}`, homeTaskToEdit,
+			)
+			.then(response => {
+// Firstly find the task that needs to be updated
     const homeTasksBeingUpdated = this.state.homeTasks; // this is an array of tasks
     for (let i = 0; i < homeTasksBeingUpdated.length; i++) {
       const homeTask = homeTasksBeingUpdated[i];
@@ -240,7 +250,11 @@ class App extends React.Component {
     this.setState({
       homeTasks: homeTasksBeingUpdated
     });
-  };
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
+};
 
 
 
