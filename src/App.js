@@ -243,13 +243,20 @@ class App extends React.Component {
   addHomeTask = homeTaskDescription => {
     // Define the task that is being added
     const homeTaskToAdd = {
-      description: homeTaskDescription,
-      completed: false
+      taskDescription: homeTaskDescription,
+      completed: 0,
+      category: "HOME",
+      userId: 1
     };
 
-    console.log("Adding home task");
-    console.log(homeTaskToAdd);
-
+    axios
+    .post(
+      "https://fvnx69glt6.execute-api.eu-west-2.amazonaws.com/dev/tasks",
+      homeTaskToAdd
+    )
+    .then(response => {
+      homeTaskToAdd.taskId = response.data.tasks.taskId;
+      console.log(homeTaskToAdd);
     // get the current list of tasks from state
     const currentHomeTasks = this.state.homeTasks;
     // add the 'taskToAdd' to the array of tasks in state
@@ -258,7 +265,12 @@ class App extends React.Component {
     this.setState({
       homeTasks: currentHomeTasks
     });
-  };
+  })
+  .catch(error => {
+    // handle error
+    console.error(error);
+  });
+};
 
 
   
