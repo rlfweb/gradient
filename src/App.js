@@ -227,7 +227,7 @@ class App extends React.Component {
     return (
       <div>
         {/* // You add every file name within here */}
-        <div className="container">
+        <div className="container-fluid">
           <Header />
           <div className="row mainBox">
             <div className="col-12 col-md-6">
