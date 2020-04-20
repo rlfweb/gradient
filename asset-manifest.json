@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/gradient/static/css/main.dc46a547.chunk.css",
+    "main.js": "/gradient/static/js/main.b3ee3427.chunk.js",
+    "main.js.map": "/gradient/static/js/main.b3ee3427.chunk.js.map",
+    "runtime-main.js": "/gradient/static/js/runtime-main.8e3b4907.js",
+    "runtime-main.js.map": "/gradient/static/js/runtime-main.8e3b4907.js.map",
+    "static/js/2.377723a3.chunk.js": "/gradient/static/js/2.377723a3.chunk.js",
+    "static/js/2.377723a3.chunk.js.map": "/gradient/static/js/2.377723a3.chunk.js.map",
+    "index.html": "/gradient/index.html",
+    "precache-manifest.9290c8c7b365016654723350447d03f4.js": "/gradient/precache-manifest.9290c8c7b365016654723350447d03f4.js",
+    "service-worker.js": "/gradient/service-worker.js",
+    "static/css/main.dc46a547.chunk.css.map": "/gradient/static/css/main.dc46a547.chunk.css.map",
+    "static/js/2.377723a3.chunk.js.LICENSE": "/gradient/static/js/2.377723a3.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8e3b4907.js",
+    "static/js/2.377723a3.chunk.js",
+    "static/css/main.dc46a547.chunk.css",
+    "static/js/main.b3ee3427.chunk.js"
+  ]
+}
